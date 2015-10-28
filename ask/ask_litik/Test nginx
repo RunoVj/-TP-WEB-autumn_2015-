@@ -1,0 +1,57 @@
+Тест gunicorn
+
+test_user@R1210b:/home/ilya$ ab -n 1000 -c 100 http://127.0.0.1:8001/
+This is ApacheBench, Version 2.3 <$Revision: 1528965 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:        gunicorn/17.5
+Server Hostname:        127.0.0.1
+Server Port:            8001
+
+Document Path:          /
+Document Length:        12 bytes
+
+Concurrency Level:      100
+Time taken for tests:   0.164 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      135000 bytes
+HTML transferred:       12000 bytes
+Requests per second:    6087.69 [#/sec] (mean)
+Time per request:       16.427 [ms] (mean)
+Time per request:       0.164 [ms] (mean, across all concurrent requests)
+Transfer rate:          802.58 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.9      0       4
+Processing:     2   15   3.0     15      27
+Waiting:        2   15   3.0     15      26
+Total:          6   15   3.0     15      28
+
+Percentage of the requests served within a certain time (ms)
+  50%     15
+  66%     15
+  75%     15
+  80%     15
+  90%     18
+  95%     24
+  98%     26
+  99%     27
+ 100%     28 (longest request)
+
